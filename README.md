@@ -10,6 +10,9 @@ Add Node functionality
 Remove Node functionality
 Edit Node functionality
 Move Node functionality
+Auto Save Nodes(option)
+Manual Save Button(option)
+History of changes(additional tab)
 
 JCR Node Properties: Second Release
 
