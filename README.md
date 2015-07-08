@@ -12,7 +12,7 @@ Edit Node functionality
 Move Node functionality
 Auto Save Nodes(option)
 Manual Save Button(option)
-History of changes(additional tab)
+History of changes(additional tab - able to switch to previous saved version)
 
 JCR Node Properties: Second Release
 
