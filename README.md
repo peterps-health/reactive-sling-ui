@@ -26,7 +26,7 @@ Apache Felix Log view: Fourth Release
 
 View logs that have been touched during particular resource generation process
 
-Multiple Apache Sling Launchpads:
+Multiple Apache Sling Launchpads: Fifth Release
 
 Create via Docker multiple Apache Sling Launchpads to generate different parts of application
 Assemble various renditions together on a main instance
