@@ -22,4 +22,11 @@ Sling Resource preview: Third Release
 Render available renditions for selected resource
 Update renditions after underlying resource change
 
-Apache Felix Log view
+Apache Felix Log view: Fourth Release
+
+View logs that have been touched during particular resource generation process
+
+Multiple Apache Sling Launchpads:
+
+Create via Docker multiple Apache Sling Launchpads to generate different parts of application
+Assemble various renditions together on a main instance
