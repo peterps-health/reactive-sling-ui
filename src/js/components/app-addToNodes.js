@@ -6,12 +6,11 @@ var AppActions = require('../actions/app-actions');
 
 var AddToNodes =
     React.createClass({
-        handleClick: function() {
-            console.log(this.props.item);
-            AppActions.addNode(this.props.item);
+        handleClick: function(event) {
+            AppActions.addNode(React.findDOMNode(this.refs.path).value);
         },
         render: function() {
-            return <button onClick={this.handleClick}>add Node</button>
+            return <div><input ref="path" type="text"/><button onClick={this.handleClick}>add Node</button></div>
         }
     });
 

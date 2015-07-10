@@ -10,9 +10,10 @@ var AppActions = {
         })
     },
     removeNode:function(index) {
+        console.log("here1");
         dispatcher.handleViewAction({
             actionType: constants.REMOVE_NODE,
-            item: item
+            index: index
         })
     }
 };

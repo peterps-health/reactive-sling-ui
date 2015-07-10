@@ -7,7 +7,7 @@ var AppActions = require('../actions/app-actions');
 var RemoveFromNodes =
     React.createClass({
         handleClick: function() {
-            AppActions.removeNode(this.props.index);
+            AppActions.removeNode(this.props);
         },
         render: function() {
             return <button onClick={this.handleClick}>x</button>

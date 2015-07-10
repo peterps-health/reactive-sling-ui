@@ -8,21 +8,18 @@ var AppConstants = require('../constants/app-constants');
 var CHANGE_EVENT = 'CHANGE_EVENT';
 
 var _catalog = [
-    {id:1, title: 'Site1'},
-    {id:2, title: 'Site2'},
-    {id:3, title: 'Site3'}
 ];
 
 var _nodes = _catalog;
 
 function _removeItem(index) {
-    _nodes[index].inCart = false;
-    _nodes.splice(index, 1);
+    var i = _nodes.indexOf(index.item);
+
+    _nodes.splice(i, 1);
 }
 
 function _addItem(item) {
-    item['qty'] = 1;
-    item['inCart'] = true;
+    console.log('added');
     _nodes.push(item);
 }
 

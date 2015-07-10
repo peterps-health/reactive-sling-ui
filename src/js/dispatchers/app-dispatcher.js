@@ -3,7 +3,7 @@ var assign = require('object-assign');
 
 var AppDispatcher = assign(Dispatcher.prototype, {
     handleViewAction: function(action) {
-        console.log('this item has been added');
+        console.log('action', action);
         this.dispatch({
             source: 'VIEW_ACTION',
             action:action
