@@ -7,10 +7,11 @@ var AppConstants = require('../constants/app-constants');
 
 var CHANGE_EVENT = 'CHANGE_EVENT';
 
-var _catalog = [
+var _initial_nodes_state = [
+    {id:'/'}
 ];
 
-var _nodes = _catalog;
+var _nodes = _initial_nodes_state;
 
 var _currentPath = '/';
 

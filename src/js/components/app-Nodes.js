@@ -25,7 +25,7 @@ var Options =
                   <JCRNode item={item} /><RemoveFromNodes item={item}/>
               </div>
             });
-            return <table>{items}</table>
+            return <div>{items}</div>
         }
     });
 
