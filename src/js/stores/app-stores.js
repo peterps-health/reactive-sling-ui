@@ -12,6 +12,8 @@ var _catalog = [
 
 var _nodes = _catalog;
 
+var _currentPath = '/';
+
 function _removeItem(index) {
     var i = _nodes.indexOf(index.item);
 
@@ -20,6 +22,7 @@ function _removeItem(index) {
 
 function _selectedNode(id) {
     console.log(id);
+    _currentPath = id;
 }
 
 function _addItem(item) {
@@ -40,6 +43,9 @@ var AppStore = assign(EventEmmitter.prototype, {
 
     getNodes: function () {
         return _nodes;
+    },
+    getCurrentPath: function() {
+        return _currentPath;
     },
 
     dispatcherIndex:AppDispatcher.register(function(payload){

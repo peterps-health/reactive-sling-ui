@@ -4,6 +4,7 @@
 var React = require('react');
 var Options = require('../components/app-Options');
 var Nodes = require('../components/app-Nodes');
+var SelectedPath = require('../components/app-selectedPath');
 
 
 var APP =
@@ -11,6 +12,8 @@ var APP =
         render: function() {
             return (
                 <div>
+                    <h1>Selected Path</h1>
+                    <SelectedPath />
                     <h1>Options</h1>
                     <Options />
                     <h1>Nodes</h1>
