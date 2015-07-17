@@ -11,7 +11,7 @@ var APP =
         render: function() {
             return (
                 <div>
-                    <h1>Add Node</h1>
+                    <h1>Options</h1>
                     <Options />
                     <h1>Nodes</h1>
                     <Nodes />

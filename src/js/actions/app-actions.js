@@ -10,9 +10,14 @@ var AppActions = {
         })
     },
     removeNode:function(index) {
-        console.log("here1");
         dispatcher.handleViewAction({
             actionType: constants.REMOVE_NODE,
+            index: index
+        })
+    },
+    selectedNode:function(index) {
+        dispatcher.handleViewAction({
+            actionType: constants.SELECTED_NODE,
             index: index
         })
     }

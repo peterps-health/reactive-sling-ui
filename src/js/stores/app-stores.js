@@ -18,6 +18,10 @@ function _removeItem(index) {
     _nodes.splice(i, 1);
 }
 
+function _selectedNode(id) {
+    console.log(id);
+}
+
 function _addItem(item) {
     console.log('added');
     _nodes.push(item);
@@ -47,6 +51,10 @@ var AppStore = assign(EventEmmitter.prototype, {
 
             case AppConstants.REMOVE_NODE:
                 _removeItem(payload.action.index);
+                break;
+
+            case AppConstants.SELECTED_NODE:
+                _selectedNode(payload.action.index);
                 break;
 
         }
