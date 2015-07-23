@@ -36,6 +36,9 @@ var JCRNode =
             console.log('executed by componentDidMount' + this.props.node);
             console.log('did mount');
             console.log(this.props.node);
+            if(this.props.shoudlLoad == false) {
+                return;
+            }
             jQuery.ajax({
                 url: 'http://localhost:8080/view/tree.json',
                 dataType: 'json',
@@ -55,7 +58,7 @@ var JCRNode =
             //TODO execute the call here to figure out whether this node has children
             if(this.state != null) {
                 var commentNodes = this.state.data.map(function (comment) {
-                    return <JCRNode node={comment.path} />;
+                    return <JCRNode shoudlLoad={false} node={comment.path} />;
                 });
             }
             console.log('executed');
