@@ -3,7 +3,7 @@
  */
 var React = require('react');
 var Options = require('../components/app-Options');
-var Nodes = require('../components/app-Nodes');
+var JCRNode = require('../components/app-Node');
 var SelectedPath = require('../components/app-selectedPath');
 
 
@@ -17,7 +17,7 @@ var APP =
                     <h1>Options</h1>
                     <Options />
                     <h1>Nodes</h1>
-                    <Nodes />
+                    <JCRNode node="/" />
                 </div>
 
             )
