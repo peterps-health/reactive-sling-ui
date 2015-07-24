@@ -1,0 +1,33 @@
+{
+  "name": "reactive-sling-ui",
+  "version": "1.0.0",
+  "description": "Reactve interface in reactJS for the Sling Framework",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "classnames": "^2.1.3",
+    "gulp": "^3.9.0",
+    "es6-promise": "^2.3.0",
+    "gulp-browserify": "^0.5.1",
+    "jquery": "^2.1.4",
+    "gulp-concat": "^2.6.0",
+    "object-assign": "^3.0.0",
+    "react": "^0.13.3",
+    "reactify": "^1.1.1",
+    "es6-promises": "^1.0.10",
+    "install": "^0.1.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/peterps-health/reactive-sling-ui.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/peterps-health/reactive-sling-ui/issues"
+  },
+  "homepage": "https://github.com/peterps-health/reactive-sling-ui"
+}
