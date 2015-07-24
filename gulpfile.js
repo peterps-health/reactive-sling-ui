@@ -14,6 +14,11 @@ gulp.task('copy', function() {
         .pipe(gulp.dest('dist'));
 })
 
+gulp.task('copy', function() {
+    gulp.src('src/css/style.css')
+        .pipe(gulp.dest('dist/css'));
+})
+
 gulp.task('default',['browserify', 'copy']);
 
 gulp.task('watch', function() {

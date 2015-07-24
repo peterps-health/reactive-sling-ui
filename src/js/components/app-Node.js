@@ -2,6 +2,7 @@ var React = require('react');
 
 var AppActions = require('../actions/app-actions');
 var jQuery = require('jquery');
+var classNames = require('classnames');
 
 
 
@@ -32,6 +33,7 @@ var JCRNode =
         },
         handleContextMenu : function(e) {
             console.log("right clicked");
+
 
         },
         handleDoubleClick: function(e) {
@@ -64,8 +66,12 @@ var JCRNode =
         },
         render: function() {
             var style;
+            var togglableUp;
             if (!this.state.visible) {
                 style = {display: "none"};
+                togglableUp = "togglable-up inline";
+            } else {
+                togglableUp = "togglable-down inline";
             }
             if(this.state != null && this.state.data != undefined) {
                 var commentNodes = this.state.data.map(function (comment) {
@@ -75,15 +81,15 @@ var JCRNode =
             console.log('executed');
             console.log(this.state);
 
-            return <ul >
-                <li>
-                    <div class="hide" onClick={this.handleHideOrShow}>Hide</div>
-                    <div style={style}>
-                        <div onDoubleClick={this.handleDoubleClick} onContextMenu={this.handleContextMenu} onClick={this.handleClick}>{this.props}</div>
-                        {commentNodes}
+            return <div className="jcr-view-menu-ul">
+                    <div className="jcr-view-menu-item">
+                        <div className={togglableUp} onClick={this.handleHideOrShow}></div>
+                        <div className="hide" style={style}>
+                            <div onDoubleClick={this.handleDoubleClick} onContextMenu={this.handleContextMenu} onClick={this.handleClick}>{this.props}</div>
+                            {commentNodes}
+                        </div>
                     </div>
-                </li>
-                </ul>
+                </div>
         }
     });
 

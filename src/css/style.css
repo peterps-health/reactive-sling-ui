@@ -1,0 +1,20 @@
+.jcr-view-menu-ul {
+    padding-left: 10px;
+}
+.jcr-view-menu-item {
+    padding-left: 5px;
+}
+.hide, .inline {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.togglable-down::after {
+    content: "▼";
+    display: inline-block;
+}
+
+.togglable-up::after {
+    content: "▶";
+    display: inline-block;
+}
