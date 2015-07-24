@@ -43,8 +43,6 @@ var JCRNode =
             this.setState({visible: !this.state.visible});
         },
         componentDidMount: function() {
-            console.log('executed by componentDidMount' + this.props.node);
-            console.log('did mount');
             console.log(this.props.node);
             if(this.props.shoudlLoadChildren == false) {
                 return;
@@ -78,15 +76,15 @@ var JCRNode =
                     return <JCRNode shoudlLoadChildren={false} node={comment.path} />;
                 });
             }
-            console.log('executed');
-            console.log(this.state);
 
             return <div className="jcr-view-menu-ul">
                     <div className="jcr-view-menu-item">
-                        <div className={togglableUp} onClick={this.handleHideOrShow}></div>
-                        <div className="hide" style={style}>
+                        <div className={classNames(togglableUp)} onClick={this.handleHideOrShow}></div>
+                        <div className="hide">
                             <div onDoubleClick={this.handleDoubleClick} onContextMenu={this.handleContextMenu} onClick={this.handleClick}>{this.props}</div>
-                            {commentNodes}
+                                <div style={style}>
+                                    {commentNodes}
+                                </div>
                         </div>
                     </div>
                 </div>
