@@ -7,6 +7,11 @@ var jQuery = require('jquery');
 
 var JCRNode =
     React.createClass({
+        getInitialState: function() {
+            return {
+                visible: true
+            };
+        },
         handleClick: function() {
             AppActions.selectedNode(this.props);
             console.log('executed by handleClick' + this.props.node);
@@ -17,7 +22,7 @@ var JCRNode =
                 cache: false,
                 success: function(data) {
                     if(data.length > 0) {
-                        this.setState({data: data});
+                        this.setState({data: data, visible: true});
                     }
                 }.bind(this),
                 error: function(xhr, status, err) {
@@ -32,11 +37,14 @@ var JCRNode =
         handleDoubleClick: function(e) {
 
         },
+        handleHideOrShow: function(e) {
+            this.setState({visible: !this.state.visible});
+        },
         componentDidMount: function() {
             console.log('executed by componentDidMount' + this.props.node);
             console.log('did mount');
             console.log(this.props.node);
-            if(this.props.shoudlLoad == false) {
+            if(this.props.shoudlLoadChildren == false) {
                 return;
             }
             jQuery.ajax({
@@ -46,7 +54,7 @@ var JCRNode =
                 cache: false,
                 success: function(data) {
                     if(data.length > 0) {
-                        this.setState({data: data});
+                        this.setState({data: data, visible: true});
                     }
                 }.bind(this),
                 error: function(xhr, status, err) {
@@ -55,19 +63,27 @@ var JCRNode =
             });
         },
         render: function() {
-            //TODO execute the call here to figure out whether this node has children
-            if(this.state != null) {
+            var style;
+            if (!this.state.visible) {
+                style = {display: "none"};
+            }
+            if(this.state != null && this.state.data != undefined) {
                 var commentNodes = this.state.data.map(function (comment) {
-                    return <JCRNode shoudlLoad={false} node={comment.path} />;
+                    return <JCRNode shoudlLoadChildren={false} node={comment.path} />;
                 });
             }
             console.log('executed');
             console.log(this.state);
 
-            return <div>
-                <div onDoubleClick={this.handleDoubleClick} onContextMenu={this.handleContextMenu} onClick={this.handleClick}>{this.props}</div>
-                {commentNodes}
-                </div>
+            return <ul >
+                <li>
+                    <div class="hide" onClick={this.handleHideOrShow}>Hide</div>
+                    <div style={style}>
+                        <div onDoubleClick={this.handleDoubleClick} onContextMenu={this.handleContextMenu} onClick={this.handleClick}>{this.props}</div>
+                        {commentNodes}
+                    </div>
+                </li>
+                </ul>
         }
     });
 
